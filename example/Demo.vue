@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Datepicker Examples</h1>
+    <!-- <h1>Datepicker Examples</h1>
     <div class="example">
       <h3>Default datepicker...</h3>
       <Datepicker placeholder="Select Date" />
@@ -217,16 +217,13 @@
           </option>
         </select>
       </div>
-    </div>
+    </div> -->
 
     <div class="example">
       <h3>Inline datepicker</h3>
-      <Datepicker :inline="true" />
-      <code>
-        &lt;datepicker :inline="true"&gt;&lt;/datepicker&gt;
-      </code>
+      <Datepicker :inline="true" :showFooter="true" />
     </div>
-    <div class="example">
+    <!-- <div class="example">
       <h3>RTL datepicker</h3>
       <Datepicker :language="languages.he" />
       <code>
@@ -293,7 +290,7 @@
         &lt;datepicker :minimumView="'month'" :maximumView="'year'"
         :initialView="'year'"&gt;&lt;/datepicker&gt;
       </code>
-    </div>
+    </div> -->
   </div>
 </template>
 
