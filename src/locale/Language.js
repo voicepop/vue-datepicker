@@ -1,5 +1,5 @@
 export default class Language {
-  constructor(language, months, monthsAbbr, days) {
+  constructor(language, months, monthsAbbr, days, today) {
     this.language = language
     this.months = months
     this.monthsAbbr = monthsAbbr
@@ -7,6 +7,7 @@ export default class Language {
     this.rtl = false
     this.ymd = false
     this.yearSuffix = ''
+    this.today = today
   }
 
   /* eslint-disable no-underscore-dangle */
@@ -52,6 +53,14 @@ export default class Language {
       throw new RangeError(`There must be 7 days for ${this.language} language`)
     }
     this._days = days
+  }
+
+  get today() {
+    return this._today
+  }
+
+  set today(today) {
+    this._today = today
   }
 
   getMonthByAbbrName(name) {
