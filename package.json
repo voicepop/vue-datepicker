@@ -7,8 +7,7 @@
   "module": "dist/vuejs-datepicker.esm.js",
   "files": [
     "src",
-    "dist",
-    "LICENSE"
+    "dist"
   ],
   "scripts": {
     "prepare": "npm run clear && npm run build",
