@@ -9,18 +9,6 @@ import { terser } from 'rollup-plugin-terser'
 import vue from 'rollup-plugin-vue'
 import alias from 'rollup-plugin-alias'
 
-const {
-  author,
-  name,
-  version,
-  license,
-} = require('../package.json')
-
-const banner = `/*
-* ${name} v${version}
-* (c) 2018-${new Date().getFullYear()} ${author}
-* Released under the ${license} License.
-*/`
 
 const configs = {
   umd: {
@@ -83,7 +71,6 @@ async function build() {
     const outputOptions = {
       file: path.join(__dirname, '..', 'dist', config.output),
       format: config.format,
-      banner,
       name: 'vuejsDatepicker',
     }
     // eslint-disable-next-line no-await-in-loop

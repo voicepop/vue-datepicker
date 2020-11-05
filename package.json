@@ -1,24 +1,10 @@
 {
-  "name": "@sum.cumo/vue-datepicker",
+  "name": "@voicepop/vue-datepicker",
   "version": "2.1.2",
   "description": "A simple Vue.js datepicker component. Supports disabling of dates, inline mode, translations",
-  "license": "Apache-2.0",
-  "homepage": "https://github.com/sumcumo/vue-datepicker",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:sumcumo/vue-datepicker.git"
-  },
-  "author": "sum.cumo GmbH",
-  "keywords": [
-    "vue",
-    "datepicker",
-    "date-picker",
-    "calendar",
-    "typeable"
-  ],
+  "author": "voicepop",
   "main": "dist/vuejs-datepicker.js",
   "module": "dist/vuejs-datepicker.esm.js",
-  "unpkg": "dist/vuejs-datepicker.min.js",
   "files": [
     "src",
     "dist",
