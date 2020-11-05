@@ -31,6 +31,7 @@
       >
         {{ d[0] }}
       </span>
+      <hr>
       <template v-if="blankDays > 0">
         <span
           v-for="d in blankDays"
@@ -49,11 +50,33 @@
       v-html="dayCellContent(day)"
     />
     </div>
+    <PickerFooter
+      :config="footerConfig"
+      :next="nextMonth"
+      :previous="previousMonth"
+    >
+      <span
+        slot="footerContent"
+        class="day__month_btn up"
+        @click="$emit('select-date', { timestamp: Date.now() })"
+      >
+        {{ translation.today }}
+      </span>
+      <slot
+        slot="nextIntervalBtn"
+        name="nextIntervalBtn"
+      />
+      <slot
+        slot="prevIntervalBtn"
+        name="prevIntervalBtn"
+      />
+    </PickerFooter>
     <slot name="calendarFooterDay" />
   </div>
 </template>
 <script>
 import pickerMixin from '~/mixins/pickerMixin'
+import PickerFooter from '~/components/PickerFooter'
 import { isDateDisabled } from '~/utils/DisabledDatesUtils'
 
 export default {
@@ -61,7 +84,14 @@ export default {
   mixins: [
     pickerMixin,
   ],
+  components: {
+    PickerFooter,
+  },
   props: {
+    showFooter: {
+      type: Boolean,
+      default: false,
+    },
     fullMonthName: {
       type: Boolean,
       default: false,
@@ -80,6 +110,16 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  data() {
+    return {
+      footerConfig: {
+        showFooter: this.showFooter,
+        isRtl: this.isRtl,
+        isNextDisabled: this.isNextDisabled,
+        isPreviousDisabled: this.isPreviousDisabled,
+      },
+    }
   },
   computed: {
     /**

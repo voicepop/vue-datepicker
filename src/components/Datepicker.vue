@@ -69,6 +69,7 @@
           :use-utc="useUtc"
 
           :show-header="showHeader"
+          :show-footer="showFooter"
           :full-month-name="fullMonthName"
           :monday-first="mondayFirst"
           :day-cell-content="dayCellContent"
@@ -207,6 +208,10 @@ export default {
     showHeader: {
       type: Boolean,
       default: true,
+    },
+    showFooter: {
+      type: Boolean,
+      default: false,
     },
     value: {
       type: [

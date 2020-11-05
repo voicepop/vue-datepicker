@@ -26,7 +26,7 @@
     position: static;
   }
 
-  header {
+  header, footer {
     display: block;
     line-height: 40px;
 
@@ -163,6 +163,11 @@
         background: inherit;
       }
     }
+  }
+
+  hr {
+    margin: 0;
+    border-color: #ccc;
   }
 
   .month,
