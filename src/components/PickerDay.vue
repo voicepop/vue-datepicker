@@ -29,7 +29,7 @@
         :key="d.timestamp"
         class="cell day-header"
       >
-        {{ d }}
+        {{ d[0] }}
       </span>
       <template v-if="blankDays > 0">
         <span
